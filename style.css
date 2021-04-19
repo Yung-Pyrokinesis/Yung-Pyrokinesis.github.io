@@ -1,0 +1,109 @@
+* {
+ padding: 0;
+ margin: 0;
+}
+header {
+  background-color: #474646;
+  height: 100px;
+}
+footer {
+  background-color: #474646;
+  height: 100px;
+}
+h1 {
+  color: white;
+  text-align: center;
+  padding-top: 25px;
+}
+.model {
+   min-height: 500px;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 25%;
+  border-right: 1px solid gray;
+}
+.graph {
+  width: 75%;
+  margin-top: 10px;
+}
+.form {
+  margin-top: 20px;
+}
+.slidecontainer {
+    margin: auto; 
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+img {
+   width: 70%;
+}
+
+select,input[type="number"] {
+  border-radius: 0;
+  background: transparent;
+  height: 34px;
+  padding: 0 5px;
+  font-size: 16px;
+  line-height: 1;
+  width: 90%;
+  border: 1px solid #4CAF50;
+  margin-bottom: 10px;
+}
+p {
+   margin: 10px auto;
+   width: 90%;
+   text-align: justify;
+}
+details {
+   width: 90%;
+   margin: 5px auto;
+   border: 1px solid #4CAF50;
+}
+summary {
+   animation-name: blink;
+   animation-timing-function: linear;
+   animation-duration: 1.5s;
+   animation-iteration-count: infinite;
+}
+@keyframes blink {
+   50% {
+      color: blue;
+   }
+ }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Моделі SIR i SEIR</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="Chart.min.css">
+    <script src="Chart.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <h1>Моделі SIR і SEIR</h1>
+    </header>
+    <main>
+       <div class="model">
+          <div class="content">
+            <h2>SIR</h2>
+            <details>
+               <summary>Детальніше</summary>
+               <p>SIR модель включає поділ населення на три групи: S - кількість осіб сприйнятливих до захворювання, I - кількість інфікованих осіб та R - кількість осіб, які одужали й мають імунітет.</p>
+               <img src="sir.png" alt="sir">
+            </details>
+            <div class="form">
+              <select class="days" id="daysSir">
+                  <option value="36" selected>6 місяці</option>
+                  <option value="72">1 рік</option>
+                  <option value="108">1 рік 6 місяці</option>
+                  <option value="144">2 роки</option>
+              </select>
+            </div>
+            <div class="form">
+              <label>
+                <p>Швидкість поширення хвороби &beta; = <span class="beta-coef"></span></p>
+                <input type="range" min="0.01" max="1" value="0.5" step="0.01" class="slider beta" id="myRangeBeta">
+              </label>
+            </div>
+            <div class="form">
+              <label>
+                <p>Швидкість одужання &gamma; = <span class="gamma-coef"></span></p>
+                <div class="slidecontainer">
+                  <input type="range" min="0.001" max="0.1" value="0.05" step="0.001" class="slider gamma" id="myRangeGamma">
+                </div>
+              </label>
+            </div>
+            <div class="form">
+              <label>
+                <p>Введіть кількість населення:</p> 
+                <input type="number" class="population" value="266550" id="population">
+              </label>
+            </div>
+          </div>
+         <div class="graph">
+          <canvas id="sirGraph" width="100%"></canvas>
+         </div>
+       </div>
+      <div class="model">
+         <div class="content">
+            <h2>SEIR</h2>
+            <details>
+               <summary>Детальніше</summary>
+               <p>SEIR .... . .. . .. . . . . </p>
+               <img src="seir.png" alt="seir">
+            </details>
+            <div class="form">
+               <select class="daysseir" id="daysSeir">
+                   <option value="36" >6 місяці</option>
+                   <option value="72" selected>1 рік</option>
+                   <option value="108">1 рік 6 місяці</option>
+                   <option value="144">2 роки</option>
+               </select>
+             </div>
+             <div class="form">
+               <label>
+                 <p>Швидкість поширення хвороби &beta; = <span class="beta-coef-seir"></span></p>
+                 <input type="range" min="0.01" max="1" value="0.5" step="0.01" class="slider betaseir" id="myRangeBetaSeir">
+               </label>
+             </div>
+             <div class="form">
+               <label>
+                 <p>Швидкість одужання &gamma; = <span class="gamma-coef-seir"></span></p>
+                 <div class="slidecontainer">
+                   <input type="range" min="0.001" max="0.1" value="0.05" step="0.001" class="slider gammaseir" id="myRangeGammaSeir">
+                 </div>
+               </label>
+            </div>
+               <div class="form">
+                  <label>
+                    <p>Середня смертність &mu; = <span class="mu-coef-seir"></span></p>
+                    <div class="slidecontainer">
+                      <input type="range" min="0.0001" max="0.01" value="0.0001" step="0.0001" class="slider museir" id="myRangeMuSeir">
+                    </div>
+                  </label>
+             </div>
+             <div class="form">
+               <label>
+                 <p>Інкубаційний період &alpha; = <span class="alpha-coef-seir"></span></p>
+                 <div class="slidecontainer">
+                   <input type="range" min="0.001" max="0.1" value="0.05" step="0.001" class="slider alphaseir" id="myRangeAlphaSeir">
+                 </div>
+               </label>
+          </div>
+             <div class="form">
+               <label>
+                 <p>Введіть кількість населення:</p> 
+                 <input type="number" class="populationseir" value="266550" id="populationSeir">
+               </label>
+             </div>
+         </div>
+         <div class="graph">
+            <canvas id="seirGraph" width="100%"></canvas>
+         </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
