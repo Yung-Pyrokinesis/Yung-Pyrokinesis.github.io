@@ -277,6 +277,7 @@ function Construct() {
   workPixel();
 } 
 function workPixel() {
+  let fall = +document.querySelector('#fallEpidem').value;
   let time = +document.querySelector('#timeEpidem').value;
   let infek = +document.querySelector('#infekEpidem').value;
   let incub = +document.querySelector('#incubEpidem').value;
@@ -317,12 +318,12 @@ function workPixel() {
       if(arr[i].color == 'red'){
         arr[i].day -= 1;
         if(arr[i].incub != 0){
-          console.log('incub!=0');
+          //console.log('incub!=0');
           arr[i].incub -=1;
           continue;
         }
         if(arr[i].day == 0){
-          console.log('day=0');
+          //console.log('day=0');
           arr[i].color = 'green';
           continue;
         }
@@ -337,7 +338,7 @@ function workPixel() {
             arr[i].position-1+width == arr[j].position ||
             arr[i].position-1-width == arr[j].position || 
             arr[i].position+1-width == arr[j].position) 
-            && arr[j].color == 'blue')  {
+            && arr[j].color == 'blue' && randomPixel(100) > fall)  {
               arr[j].color = 'red';
               arr[j].day = time;
               arr[j].incub = incub;
@@ -360,7 +361,7 @@ function workPixel() {
           document.querySelector(`.div-${arr[i].position}`).style.backgroundColor = arr[i].color;
         }
       }
-      if(days%5 == 0) {
+     // if(days%5 == 0) {
         let se = 0, ie = 0, re = 0;
         for(let i = 0; i < population; i++){
           if(arr[i].color == 'blue') se++;
@@ -372,18 +373,20 @@ function workPixel() {
         chart2.data.datasets['2']["data"].push(re);
         chart2.data.labels.push(days);
         chart2.update();
-      }
+     // }
       let r = 0;
       for(let i = 0; i < population; i++)
         if(arr[i].color == 'red') r++;
       if(r == 0) clearInterval(timerId);
       document.querySelector('.btn-epidem-stop').onclick = function() {
+        document.querySelector('.btn-epidem').disabled = false;
         clearInterval(timerId);
         Construct1();
       };
-    }, 600);
+    }, timeS);
 }
 document.querySelector('.btn-epidem').onclick = function(){
+  document.querySelector('.btn-epidem').disabled = true;
   Construct();
   chart2.data.datasets['0']["data"] = [];
   chart2.data.datasets['1']["data"] = [];
@@ -400,12 +403,17 @@ function res() {
   document.querySelector('.infekSpan').textContent = document.querySelector('#infekEpidem').value;
   document.querySelector('.incubSpan').textContent = document.querySelector('#incubEpidem').value;
   document.querySelector('.hereSpan').textContent = document.querySelector('#hereEpidem').value;
+  document.querySelector('.fallSpan').textContent = document.querySelector('#fallEpidem').value;
+  timeS = +document.querySelector('#timerS').value;
 }
 popEpidem.oninput = res;
 timeEpidem.oninput = res;
 infekEpidem.oninput = res;
 incubEpidem.oninput = res;
 hereEpidem.oninput = res;
+fallEpidem.oninput = res;
+timerS.oninput = res;
+let timeS = 1000;
 
 let ctx2 = document.getElementById('simGraph').getContext('2d');
 let chart2 = new Chart(ctx2, {

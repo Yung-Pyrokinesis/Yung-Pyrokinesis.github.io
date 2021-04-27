@@ -143,12 +143,23 @@
                 <input type="range" min="1" max="30" value="1" step="1" class="slider"  id="incubEpidem">
               </label>
               <label>
+                <p>Ймовірність захворіти: <span class="fallSpan">50</span></p> 
+                <input type="range" min="1" max="100" value="50" step="1" class="slider" id="fallEpidem">
+              </label>
+              <label>
                 <p>Ймовірність залишитись на місці: <span class="hereSpan">10</span></p> 
                 <input type="range" min="0" max="100" value="10" step="1" class="slider" id="hereEpidem">
               </label>
-
-               <button class="btn btn-epidem" id="btnEpidem">СТАРТ</button>\
-               <button class="btn btn-epidem-stop" id="btnEpidemStop">СТОП</button>
+              <p>Швидкість симулятора:</p>
+              <select class="timerS" id="timerS">
+                <option value="100">0.1c</option>
+                <option value="200">0.2c</option>
+                <option value="500">0.5c</option>
+                <option value="800">0.8c</option>
+                <option value="1000"selected>1c</option>
+            </select>
+               <button class="btn btn-epidem" id="btnEpidem">СТАРТ</button>
+               <button class="btn btn-epidem-stop" id="btnEpidemStop">ОЧИСТИТИ</button>
              </div>
          </div>        
            <div class="graph flex"></div>
