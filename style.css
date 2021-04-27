@@ -1,6 +1,7 @@
 * {
  padding: 0;
  margin: 0;
+ box-sizing: border-box;
 }
 header {
   background-color: #474646;
@@ -16,7 +17,7 @@ h1 {
   padding-top: 25px;
 }
 .model {
-   min-height: 500px;
+   min-height: 550px;
   display: flex;
   width: 100%;
   border-bottom: 1px solid gray;
@@ -31,7 +32,7 @@ h1 {
 }
 .graph {
   width: 75%;
-  margin-top: 10px;
+  margin: 10px auto;
 }
 .form {
   margin-top: 20px;
@@ -107,3 +108,45 @@ summary {
       color: blue;
    }
  }
+
+ .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 0;
+  height: 0;
+ }
+.pixel1 {
+  width: 25px;
+  height: 25px;
+  border: 0.5px solid rgb(161, 161, 161);
+  background-color: white;
+}
+.pixel2 {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid rgb(161, 161, 161);
+  background-color: white;
+}
+.pixel3 {
+  width: 15px;
+  height: 15px;
+  border: 0.5px solid rgb(161, 161, 161);
+  background-color: white;
+}
+.pixel4 {
+  width: 10px;
+  height: 10px;
+  border: 0.5px solid rgb(161, 161, 161);
+  background-color: white;
+}
+
+.btn {
+  width: 100px;
+  padding: 5px 20px;
+  margin: 10px 0;
+  border: 1px solid green;
+}
+.graph1 {
+  margin: auto;
+}

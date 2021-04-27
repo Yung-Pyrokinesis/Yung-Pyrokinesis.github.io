@@ -58,7 +58,7 @@
             <h2>SEIR</h2>
             <details>
                <summary>Детальніше</summary>
-               <p>SEIR .... . .. . .. . . . . </p>
+               <p>SEIR - модель для опису росповсюдження хвороби з інкубаційним періодом.</p>
                <img src="seir.png" alt="seir">
             </details>
             <div class="form">
@@ -110,6 +110,50 @@
             <canvas id="seirGraph" width="100%"></canvas>
          </div>
       </div>
+      <div class="model">
+         <div class="content">
+            <h2>Симулятор Епідемії</h2>
+             <div class="form">
+               <label>
+                Розмір сітки:
+                <select class="net-epidem">
+                   <option value="20">20</option>
+                   <option value="30">30</option>
+                   <option value="40">40</option>
+                   <option value="50"selected>50</option>
+               </select>
+               </label>
+             </div>
+             <div class="form">
+
+               <label>
+                 <p>Кількість населення: <span class="popSpan">100</span></p> 
+                 <input type="range" min="10" max="200" value="100" step="2" class="slider" id="popEpidem">
+               </label>
+               <label>
+                <p>Тривалість хвороби: <span class="timeSpan">20</span></p> 
+                <input type="range" min="1" max="30" value="20" step="1" class="slider" id="timeEpidem">
+              </label>
+              <label>
+                <p>Кількість осіб в середньому може заразити одна особа: <span class="infekSpan">2</span></p> 
+                <input type="range" min="1" max="5" value="2" step="1" class="slider" id="infekEpidem">
+              </label>
+              <label>
+                <p>Інкубаційний період: <span class="incubSpan">1</span></p> 
+                <input type="range" min="1" max="30" value="1" step="1" class="slider"  id="incubEpidem">
+              </label>
+              <label>
+                <p>Ймовірність залишитись на місці: <span class="hereSpan">10</span></p> 
+                <input type="range" min="0" max="100" value="10" step="1" class="slider" id="hereEpidem">
+              </label>
+
+               <button class="btn btn-epidem" id="btnEpidem">СТАРТ</button>\
+               <button class="btn btn-epidem-stop" id="btnEpidemStop">СТОП</button>
+             </div>
+         </div>        
+           <div class="graph flex"></div>
+      </div>
+      <div class="graph"><canvas id="simGraph" width="100%"></canvas></div>
     </main>
     <footer></footer>
     <script src="script.js"></script>
